@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .investment-plan {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Welcome to Our Investment Plans!</h1>
+<p>Today, the company offers very good conditions for flexible participation for any investment plan. Depending on the amount of your deposit, you will receive a guaranteed income for the selected investment period.</p>
+
+<h2>Please choose one of the following investment plans:</h2>
+
+<div class="investment-plan">
+    <strong>1st Floor:</strong> <br>
+    Deposit: €50 <br>
+    Profit: €750
+</div>
+<div class="investment-plan">
+    <strong>2nd Floor:</strong> <br>
+    Deposit: €100 <br>
+    Profit: €1500
+</div>
+<div class="investment-plan">
+    <strong>3rd Floor:</strong> <br>
+    Deposit: €200 <br>
+    Profit: €3000
+</div>
+<div class="investment-plan">
+    <strong>4th Floor:</strong> <br>
+    Deposit: €400 <br>
+    Profit: €6000
+</div>
+<div class="investment-plan">
+    <strong>5th Floor:</strong> <br>
+    Deposit: €600 <br>
+    Profit: €8000
+</div>
+<div class="investment-plan">
+    <strong>6th Floor:</strong> <br>
+    Deposit: €800 <br>
+    Profit: €10,000
+</div>
+<div class="investment-plan">
+    <strong>7th Floor:</strong> <br>
+    Deposit: €1000 <br>
+    Profit: €12,000
+</div>
+
+<h2>Choose Your Investment Plan</h2>
+<form id="investmentForm">
+    <label for="planSelect">Select a plan (1-7):</label>
+    <select id="planSelect" required>
+        <option value="">--Please choose an option--</option>
+        <option value="1">1st Floor</option>
+        <option value="2">2nd Floor</option>
+        <option value="3">3rd Floor</option>
+        <option value="4">4th Floor</option>
+        <option value="5">5th Floor</option>
+        <option value="6">6th Floor</option>
+        <option value="7">7th Floor</option>
+    </select>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<div class="contact-info">
+    <p>For deposits and verifications, please contact us at:</p>
+    <p><a href="mailto:au.coin.spot.au@gmail.com">au.coin.spot.au@gmail.com</a></p>
+</div>
+
+<script>
+    document.getElementById('investmentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const selectedPlan = document.getElementById('planSelect').value;
+        const plans = {
+            1: { Deposit: 50, Profit: 750 },
+            2: { Deposit: 100, Profit: 1500 },
+            3: { Deposit: 200, Profit: 3000 },
+            4: { Deposit: 400, Profit: 6000 },
+            5: { Deposit: 600, Profit: 8000 },
+            6: { Deposit: 800, Profit: 10000 },
+            7: { Deposit: 1000, Profit: 12000 },
+        };
+
+        if (plans[selectedPlan]) {
+            const selectedDetails = plans[selectedPlan];
+            alert(`You have selected the ${selectedPlan} Floor plan.\nDeposit: €${selectedDetails.Deposit}, Profit: €${selectedDetails.Profit}\nThank you for your investment!`);
+        }
+    });
+</script>
+
+</body>
+</html>
